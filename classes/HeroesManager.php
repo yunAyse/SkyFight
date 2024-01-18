@@ -21,22 +21,31 @@ class HeroesManager {
     ]);
 
     $id = $this->db->lastInsertId();
-    $newId = $hero->setId($id);
+    $hero->setId($id);
   } 
 
-  public function selectHero () {         // select and choose a hero from the db/list.
+  public function findAllAlive () {
+    $request=$this->db->query("SELECT * FROM heroes WHERE health_point > 0");
+    $aliveHeroes = $request->fetchAll();
+    var_dump($aliveHeroes) ;
 
+    
   }
-
-  public function stillAliveHeroes () {  // the list of the heroes still alive.
-
-  }
-
-  public function isHeroAlive () {        // to know if the hero is still alive.
-
-  }
-
-
-
-
+  
+  
+  
 }
+
+
+
+// public function selectHero () {         // select and choose a hero from the db/list.
+
+// }
+
+// public function stillAliveHeroes () {  // the list of the heroes still alive.
+
+// }
+
+// public function isHeroAlive () {        // to know if the hero is still alive.
+
+// }
