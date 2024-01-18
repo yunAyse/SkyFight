@@ -24,10 +24,18 @@ require_once 'config/db.php';
 
 // if the hero name is entered, create an instance of the Heroes Manager.
 if (isset($_POST['heroName']) && !empty($_POST['heroName'])) {
-  $heroManager = new HeroesManager($db);
+  $newName = $_POST['heroName'];
+  $newHero = new HeroesManager($db);
+  var_dump($newHero);
   
   // then with the instance of the new Hero,
-  $hero = new Hero($heroName);
+  $hero = new Hero($newName);
+  $hero->getName();
+  var_dump($hero->getName());
+  var_dump($hero->getId());
+
   // I call the add method from the manager. (and as an argument, I add the hero instance [I guess])
-  $heroManager->add($hero);
+  $newHero->add($hero);
+  $newHero->; 
+  // var_dump($newHero->add($hero));
 }

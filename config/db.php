@@ -6,7 +6,7 @@ try {
   $user = 'root';
   $password = '';
 
-  $db = new PDO($dsn, $username, $password);
+  $db = new PDO($dsn, $user, $password);
   
 } catch (Exception $e) {
   echo 'an error occured: '. $e->getMessage();
