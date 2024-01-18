@@ -1,15 +1,16 @@
 <?php
+require_once './config/autoload.php';
 
 class Hero
 {
   private $id;
-  private string $name;
+  private $name;
   private int $healthPoints;
 
   public function __construct($heroName)
   {
     $this->name = $heroName;
-    $this->healthPoints = 100; // I set the healthpoints to 100 as default.
+    $this->healthPoints = 100; // I set the healthpoints to 100 as a default.
   }
 
   // I get the name entered.
