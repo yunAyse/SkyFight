@@ -28,6 +28,7 @@ class Hero
     return $this->healthPoints; 
   }
 
+
   public function frapperUnMonstre()
   {
     

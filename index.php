@@ -27,7 +27,6 @@ if (isset($_POST['heroName']) && !empty($_POST['heroName'])) {
   // var_dump($AliveHero);
   $AliveHeroes = $HeroManager->getHeroes();
   
-  
 }
 ?>
 
@@ -57,8 +56,8 @@ if (isset($_POST['heroName']) && !empty($_POST['heroName'])) {
         <p><?php echo 'HP : ' . $TheHero->getHP() ?></p>
       </div>
       <div class="">
-        <form action="fight.php" method="post">
-          <input type="hidden" value="<?php echo $TheHero->getId() ?>">
+        <form action="./fight.php" method="post">
+          <input type="hidden" name="id" value="<?php echo $TheHero->getId() ?>">
           <button type="submit" style="border: 1px solid grey;">FIGHT</button>
         </form>
       </div>

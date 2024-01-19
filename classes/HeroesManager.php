@@ -8,7 +8,7 @@ class HeroesManager
   private PDO $db;
   private array $heroes = [];
 
-  
+
   public function __construct($db)
   {
     $this->db = $db;
@@ -46,21 +46,24 @@ class HeroesManager
     }
     return $this->heroes;
   }
-  public function getHeroes() :array {
+  public function getHeroes(): array
+  {
     return $this->heroes;
   }
+
+  public function find($SelectedId) { // I select the id from the database.
+    $request = $this->db->prepare("SELECT * FROM heroes WHERE :id = id");
+    $request->execute([
+      'id' => $SelectedId,
+    ]);
+    $heroId = $request->fetch();
+    return $heroId;
+  }
+
+  public function hydrateHeroId(array $Id) {
+    $newHeroId = new Hero($Id);
+    return $newHeroId;
+  }
+
+
 }
-
-
-
-// public function selectHero () {         // select and choose a hero from the db/list.
-
-// }
-
-// public function stillAliveHeroes () {  // the list of the heroes still alive.
-
-// }
-
-// public function isHeroAlive () {        // to know if the hero is still alive.
-
-// }
