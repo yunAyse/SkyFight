@@ -9,7 +9,6 @@ $selectedId = $_POST['id'];
 $findHero = $HeroManager->hydrateHeroId($HeroManager->find($selectedId)); // the selected hero's ID.
 var_dump($findHero);
 
-
 $FightManager = new FightsManager;  // new instance from the fightmanager.
 
 $theMonster = $FightManager->createMonster();

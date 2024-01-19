@@ -1,0 +1,15 @@
+.input__hero-name {
+  padding: 10px 0 10px 0;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.first-section__background {
+  background-image: url(img/background/background-entrance-2.png);
+  object-fit: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

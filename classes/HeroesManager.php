@@ -51,7 +51,8 @@ class HeroesManager
     return $this->heroes;
   }
 
-  public function find($SelectedId) { // I select the id from the database.
+  public function find($SelectedId)
+  { // I select the id from the database.
     $request = $this->db->prepare("SELECT * FROM heroes WHERE :id = id");
     $request->execute([
       'id' => $SelectedId,
@@ -60,10 +61,9 @@ class HeroesManager
     return $heroId;
   }
 
-  public function hydrateHeroId(array $Id) {
+  public function hydrateHeroId(array $Id)
+  {
     $newHeroId = new Hero($Id);
     return $newHeroId;
   }
-
-
 }

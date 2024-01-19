@@ -38,16 +38,23 @@ if (isset($_POST['heroName']) && !empty($_POST['heroName'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkyFight</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form action="" method="POST">
-    <input type="text" name="heroName" id="">
-    <input type="submit" value="Lets Go">
+  <section class="first-section__background">
+     <div class="container d-flex justify-content-center align-items-center" style="background-color: #252229; width:400px; height: 180px; padding: 16px; border-radius: 24px">
+    <form action="" method="POST">
+    <input type="text" name="heroName" id="" class="input__hero-name">
+    <input type="submit" value="Create your Hero" class="p-2 border-0 bg-light rounded p-2">
   </form>
+  </div>
+  </section>
+ 
+  
 
   <!-- CARD  -->
      
-  <div class="carousel-inner d-flex gap-4" style="flex-wrap: wrap;">
+  <div class="carousel-inner d-flex align-items-center gap-4" style="flex-wrap: wrap;">
     <?php foreach ($AliveHeroes as $TheHero) { ?>
     <div class="card p-3 justify-content-center d-flex flex-column" style="width:200px; height: 330px">
       <img src="img/chara/samurai-1.png" class="d-block w-100" alt="..."> 
