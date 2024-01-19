@@ -40,12 +40,13 @@ class HeroesManager
     foreach ($data as $aliveHero) {           // for each new Hero alive coming from the data array.
       $newHero = new Hero($aliveHero);        // create a new instance.
       $newHero->setId($aliveHero['id']);
+      $newHero->getName($aliveHero['name']);
+      $newHero->getHP($aliveHero['health_point']);
       $this->heroes[] = $newHero;             // push into the array.
     }
     return $this->heroes;
   }
   public function getHeroes() :array {
-    
     return $this->heroes;
   }
 }

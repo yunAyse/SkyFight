@@ -10,14 +10,16 @@ if (isset($_POST['heroName']) && !empty($_POST['heroName'])) {
   $HeroManager = new HeroesManager($db);
   
   // then with the instance of the new Hero,
-  $hero = new Hero($newName);
+  $hero = new Hero([
+    "name" => $newName
+  ]);
   $hero->getName();
-  var_dump($hero->getName());
+  // var_dump($hero->getName());
   
   // I call the add method from the manager. (and as an argument, I add the hero instance [I guess])
   $HeroManager->add($hero);
   $hero->getId();   // get the new ID.
-  var_dump($hero->getId());  
+  // var_dump($hero->getId());  
   
   $hero->getHP();   // get the HP of the hero.
   
@@ -25,7 +27,6 @@ if (isset($_POST['heroName']) && !empty($_POST['heroName'])) {
   // var_dump($AliveHero);
   $AliveHeroes = $HeroManager->getHeroes();
   
-  var_dump($AliveHeroes);
   
 }
 ?>
@@ -44,6 +45,27 @@ if (isset($_POST['heroName']) && !empty($_POST['heroName'])) {
     <input type="text" name="heroName" id="">
     <input type="submit" value="Lets Go">
   </form>
+
+  <!-- CARD  -->
+     
+  <div class="carousel-inner d-flex gap-4" style="flex-wrap: wrap;">
+    <?php foreach ($AliveHeroes as $TheHero) { ?>
+    <div class="card p-3 justify-content-center d-flex flex-column" style="width:200px; height: 330px">
+      <img src="img/chara/samurai-1.png" class="d-block w-100" alt="..."> 
+      <div class="description-hero">
+        <h5><?php echo 'Hero : ' . $TheHero->getName()?></h5>
+        <p><?php echo 'HP : ' . $TheHero->getHP() ?></p>
+      </div>
+      <div class="">
+        <form action="fight.php" method="post">
+          <input type="hidden" value="<?php echo $TheHero->getId() ?>">
+          <button type="submit" style="border: 1px solid grey;">FIGHT</button>
+        </form>
+      </div>
+      </div>
+    <?php } ?>
+  </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

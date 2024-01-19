@@ -5,13 +5,11 @@ class Hero
 {
   private $id;
   private $name;
-  private int $healthPoints;
-
-  public function __construct($heroName)
+  private int $healthPoints = 100;
+  public function __construct(array $data)
   {
-    $this->name = $heroName;
-    $this->healthPoints = 100; // I set the healthpoints to 100 as a default.
-  }
+    $this->name = $data['name']; // I set the healthpoints to 100 as a default.
+  } 
 
   // I get the name entered.
   public function getName() {
@@ -26,7 +24,7 @@ class Hero
     return $this->id;
   }
 
-  public function getHP () { // I get the ID from the construct method.
+  public function getHP() { // I get the ID from the construct method.
     return $this->healthPoints; 
   }
 
