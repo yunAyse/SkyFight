@@ -6,8 +6,8 @@
 
 .first-section__background {
   background-image: url(img/background/background-entrance-2.png);
-  object-fit: cover;
-  min-height: 100vh;
+  background-size: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;

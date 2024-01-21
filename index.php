@@ -27,6 +27,8 @@ if (isset($_POST['heroName']) && !empty($_POST['heroName'])) {
   // var_dump($AliveHero);
   $AliveHeroes = $HeroManager->getHeroes();
   
+} else {
+
 }
 ?>
 
@@ -41,19 +43,16 @@ if (isset($_POST['heroName']) && !empty($_POST['heroName'])) {
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="first-section__background">
+  <section class="first-section__background" style="background-repeat: no-repeat; background-size: 100%; ">
      <div class="container d-flex justify-content-center align-items-center" style="background-color: #252229; width:400px; height: 180px; padding: 16px; border-radius: 24px">
     <form action="" method="POST">
     <input type="text" name="heroName" id="" class="input__hero-name">
     <input type="submit" value="Create your Hero" class="p-2 border-0 bg-light rounded p-2">
   </form>
   </div>
-  </section>
- 
-  
+
 
   <!-- CARD  -->
-     
   <div class="carousel-inner d-flex align-items-center gap-4" style="flex-wrap: wrap;">
     <?php foreach ($AliveHeroes as $TheHero) { ?>
     <div class="card p-3 justify-content-center d-flex flex-column" style="width:200px; height: 330px">
@@ -71,6 +70,11 @@ if (isset($_POST['heroName']) && !empty($_POST['heroName'])) {
       </div>
     <?php } ?>
   </div>
+  
+  </section>
+ 
+  
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
