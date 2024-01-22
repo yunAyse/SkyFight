@@ -24,17 +24,23 @@ class Hero
     return $this->id;
   }
 
+  public function setHP($healthPoints) {
+    $this->healthPoints = $healthPoints;
+  }
+
   public function getHP() { // I get the ID from the construct method.
     return $this->healthPoints; 
   }
 
-
-  public function frapperUnMonstre()
-  {
-    
+  public function generatedRandomDamage() {
+    return rand(5,15);
   }
 
-  public function hit() {
+  public function hit($monster) {
+  $damage = $monster->generatedRandomDamage();
 
+  $monster->setHP($monster->getHP()-$damage);
+  return $damage;
   }
+
 }

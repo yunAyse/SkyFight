@@ -61,9 +61,10 @@ class HeroesManager
     return $heroId;
   }
 
-  public function hydrateHeroId(array $Id)
+  public function hydrateHeroId(array $heroId)
   {
-    $newHeroId = new Hero($Id);
+    $newHeroId = new Hero($heroId);
+    $newHeroId->setId($heroId['id']);
     return $newHeroId;
   }
 }

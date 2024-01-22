@@ -6,12 +6,18 @@ require_once 'config/db.php';
 $HeroManager = new HeroesManager($db); // new hero manager instance.
 $selectedId = $_POST['id'];
 
-$findHero = $HeroManager->hydrateHeroId($HeroManager->find($selectedId)); // the selected hero's ID.
-var_dump($findHero);
+$hero = $HeroManager->hydrateHeroId($HeroManager->find($selectedId)); // the selected hero's ID.
+var_dump($hero);
 
 $FightManager = new FightsManager;  // new instance from the fightmanager.
 
 $theMonster = $FightManager->createMonster();
-var_dump($theMonster);
-$FightManager->fight($findHero, $theMonster);
+
+$fightResults = $FightManager->fight($hero, $theMonster);
+var_dump($fightResults);
+// $HeroManager->update($hero);
+$monster = new Monster();
+
+$monster->hit($hero);
+
 
