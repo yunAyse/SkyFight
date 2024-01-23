@@ -12,12 +12,17 @@ var_dump($hero);
 $FightManager = new FightsManager;  // new instance from the fightmanager.
 
 $theMonster = $FightManager->createMonster();
+var_dump($theMonster);
 
 $fightResults = $FightManager->fight($hero, $theMonster);
 var_dump($fightResults);
+
+
 // $HeroManager->update($hero);
 $monster = new Monster();
 
 $monster->hit($hero);
+$hero->hit($monster);
+
 
 

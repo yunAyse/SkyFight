@@ -1,40 +1,40 @@
-<?php 
+<?php
 
-class Monster {
-  private $id;
+class Monster
+{
   private $name;
   private $healthPoints = 100;
 
-  public function setName($name) {
+  public function setName($name)
+  {
     $this->name = $name;
   }
 
   public function getName()
- {
-  return $this->name;
- }
+  {
+    return $this->name;
+  }
+
+  public function setHP($healthPoints)
+  {
+    $this->healthPoints = $healthPoints;
+  }
+
+  public function getHP()
+  {
+    return $this->healthPoints;
+  }
 
 
- public function getHP () {
-  return $this->healthPoints;
- }
+  public function hit($hero): int
+  {
+    $damage = rand(5, 15);
 
- public function getId() {
-  return $this->id;
- }
- 
-  public function generatedRandomDamage() {
-   return rand(5,15);
- }
-
- public function hit($hero) {
-  $damage = $hero->generatedRandomDamage();
-
-  $hero->setHP($hero->getHP() - $damage);
-  return $damage;
-  var_dump($damage);
- }
+    $HeroHp = $hero->getHP();
+    $hero->setHP($HeroHp - $damage);
+    var_dump($HeroHp);
 
 
-
+    return $HeroHp;
+  }
 }

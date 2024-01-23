@@ -12,35 +12,36 @@ class FightsManager { // store the data of the fight and do those functionalitie
     return $monster;
   }
 
-  public function fight(Hero $hero, Monster $monster) {
+  public function fight($hero,$monster) {
     $fightDamages = [];
     
-    while ($hero->getHP() > 0 && $monster->getHP() > 0) {
+    while ($hero->getHP() > 0 and $monster->getHP() > 0) {
       $damageToHero = intval($monster->hit($hero)); //  a random number will be generated.
 
       if($damageToHero > 0) {
-       $fightDamages[] = 'The Hero is ' . $damageToHero . ' HP away to die.' ;
+       $fightDamages[] = 'The Hero have ' . $damageToHero . ' HP left.' ;
       }
 
       if ($monster->getHP() < 0 or $hero->getHP() < 0) {
         break;
       }
 
-      $damageToMonster = intval($monster->hit($hero));
+      $damageToMonster = intval($hero->hit($monster));
 
       if ($damageToMonster > 0) {
-        $fightDamages[] = 'The Monster is ' . $damageToMonster . ' HP away to die.';
+        $fightDamages[] = 'The Monster have ' . $damageToMonster . ' HP left.';
       }
 
-      if($hero->getHP() < 0 and $monster->getHP() < 0) {
+      if($hero->getHP() < 0 or $monster->getHP() < 0) {
         break;
       }
+     
     } 
     
     return $fightDamages;
     
   }
-
+  
  
 
 }
