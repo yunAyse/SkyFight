@@ -37,13 +37,13 @@ class Hero
     return $this->healthPoints;
   }
 
-  public function hit($monster): int
+  public function hit(Monster $monster): int
   {
     $damage = rand(5, 15);
 
     $MonsterHP = $monster->getHP();
     $monster->setHP($MonsterHP - $damage);
-    var_dump($MonsterHP);
+    // var_dump($MonsterHP);
 
     return $MonsterHP;
   }

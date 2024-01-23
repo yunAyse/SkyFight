@@ -26,13 +26,13 @@ class Monster
   }
 
 
-  public function hit($hero): int
+  public function hit(Hero $hero): int
   {
     $damage = rand(5, 15);
 
     $HeroHp = $hero->getHP();
     $hero->setHP($HeroHp - $damage);
-    var_dump($HeroHp);
+    // var_dump($HeroHp);
 
 
     return $HeroHp;

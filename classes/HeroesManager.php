@@ -67,4 +67,19 @@ class HeroesManager
     $newHeroId->setId($heroId['id']);
     return $newHeroId;
   }
+
+  public function updateHero (Hero $hero) {
+    $request = $this->db->prepare("UPDATE heroes SET health_point = :health_point WHERE id = :id");
+    $request->execute([
+      'id' => $hero->getId(),
+      'health_point' => $hero->getHP() ,
+    ]);
+  }
+
+  public function deleteHero (Hero $hero) {
+    $request = $this->db->prepare("DELETE FROM heroes WHERE id = :id ");
+    $request->execute([
+      'id' => $hero->getId(),
+    ]);
+  }
 }
