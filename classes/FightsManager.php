@@ -12,14 +12,14 @@ class FightsManager { // store the data of the fight and do those functionalitie
     return $monster;
   }
 
-  public function fight($hero,$monster) {
+  public function fight($hero,$monster) { 
     $fightDamages = [];
     
     while ($hero->getHP() > 0 and $monster->getHP() > 0) {
-      $damageToHero = intval($monster->hit($hero)); //  a random number will be generated.
+      $damageToHero = intval($monster->hit($hero));
 
       if($damageToHero > 0) {
-       $fightDamages[] = 'The Hero have ' . $damageToHero . ' HP left.' ;
+       $fightDamages[] = 'The Monster inflict ' . $damageToHero . ' HP damage.' ;
       }
 
       if ($monster->getHP() < 0 or $hero->getHP() < 0) {
@@ -29,7 +29,7 @@ class FightsManager { // store the data of the fight and do those functionalitie
       $damageToMonster = intval($hero->hit($monster));
 
       if ($damageToMonster > 0) {
-        $fightDamages[] = 'The Monster have ' . $damageToMonster . ' HP left.';
+        $fightDamages[] = 'The Hero inflict ' . $damageToMonster . ' HP damage.';
       }
 
       if($hero->getHP() < 0 or $monster->getHP() < 0) {

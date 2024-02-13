@@ -45,6 +45,6 @@ class Hero
     $monster->setHP($MonsterHP - $damage);
     // var_dump($MonsterHP);
 
-    return $MonsterHP;
+    return $damage;
   }
 }

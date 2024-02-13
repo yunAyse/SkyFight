@@ -1,16 +1,55 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .input__hero-name {
   padding: 10px 0 10px 0;
   margin-right: 10px;
   border-radius: 10px;
 }
 
-.first-section__background {
-  background-image: url(img/background/background-entrance-2.png);
-  background-size: 100%;
 
+.body-combat {
+  background-image: url(img/background/background-entrance-2.png);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+.first-section__background{
+  display: flex;
+  justify-content: center;
+}
+
+.section-hero {
   text-align: center;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  gap : 30px;
+}
+
+.hero_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* FIGHT SECTION  */
+
+.body-fight {
+  background-image: url(img/background/background-2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.fight-description {
+  display: flex;
+  flex-direction: column;
 }
